@@ -110,11 +110,11 @@
 
     .status {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 0.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
       padding: 0 1rem 2rem;
-      justify-items: center;
     }
+
 
 
     .status-box {
@@ -236,6 +236,11 @@
     }
 
     @media (max-width: 600px) {
+
+      .status {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       header p {
         font-size: 1.1rem;
       }
