@@ -91,6 +91,23 @@
       background-color: #9b59b6;
     }
 
+    .report-button {
+      margin: 1.5rem auto 2rem;
+      padding: 0.75rem 1.25rem;
+      background-color: #e67e22;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: block;
+    }
+
+    .report-button:hover {
+      background-color: #d35400;
+    }
+
     .status {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -107,6 +124,7 @@
       gap: 0.75rem;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       width: 100%;
+      cursor: pointer;
     }
 
     .indicator {
@@ -224,6 +242,13 @@
       }
     }
   </style>
+  <script>
+    function reportProblem(platform) {
+      const subject = encodeURIComponent("Problem Report");
+      const body = encodeURIComponent(`I want to report a problem with the ${platform} service.`);
+      window.location.href = `mailto:lifelink.ai@gmail.com?subject=${subject}&body=${body}`;
+    }
+  </script>
 </head>
 
 <body>
@@ -248,8 +273,10 @@
       </div>
     </div>
 
+    <button class="report-button" onclick="reportProblem('general')">Report a Problem</button>
+
     <div class="status" id="status-container">
-      <!-- Boxes injected by script -->
+      <!-- Boxes injected by script with onclick="reportProblem('PlatformName')" -->
     </div>
   </section>
 
