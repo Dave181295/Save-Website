@@ -1,5 +1,5 @@
 // Arrays for platform statuses
-const allGood = ['Instagram', 'TikTok', 'YouTube', 'Snapchat', 'Pinterest'];
+const allGood = ['Instagram', 'TikTok', 'YouTube', 'Snapchat', 'Pinterest', 'WeChat'];
 const outage = ['Facebook'];
 const comingSoon = ['Threads', 'LinkedIn', 'Reddit', 'Twitter/X', 'Telegram'];
 
@@ -14,7 +14,9 @@ const iconMap = {
     'Twitter/X': 'fab fa-twitter',
     'YouTube': 'fab fa-youtube',
     'Pinterest': 'fab fa-pinterest',
-    'Snapchat': 'fab fa-snapchat'
+    'Snapchat': 'fab fa-snapchat',
+    'Telegram': 'fab fa-telegram',
+    'WeChat': 'fab fa-weixin'
 };
 
 // Function to create a status box
