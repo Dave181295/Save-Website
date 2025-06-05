@@ -243,9 +243,23 @@
     }
   </style>
   <script>
-    function reportProblem(platform) {
+    let selectedPlatform = null;
+
+    function selectPlatform(box, platform) {
+      document.querySelectorAll('.status-box').forEach(el => {
+        el.style.border = 'none';
+      });
+      box.style.border = '2px solid white';
+      selectedPlatform = platform;
+    }
+
+    function reportProblem() {
+      if (!selectedPlatform) {
+        alert('Please select a platform before reporting a problem.');
+        return;
+      }
       const subject = encodeURIComponent("Problem Report");
-      const body = encodeURIComponent(`I want to report a problem with the ${platform} service.`);
+      const body = encodeURIComponent(`I want to report a problem with the ${selectedPlatform} service.`);
       window.location.href = `mailto:lifelink.ai@gmail.com?subject=${subject}&body=${body}`;
     }
   </script>
@@ -273,10 +287,10 @@
       </div>
     </div>
 
-    <button class="report-button" onclick="reportProblem('general')">Report a Problem</button>
+    <button class="report-button" onclick="reportProblem()">Report a Problem</button>
 
     <div class="status" id="status-container">
-      <!-- Boxes injected by script with onclick="reportProblem('PlatformName')" -->
+      <!-- Boxes injected by script with: onclick="selectPlatform(this, 'PlatformName')" -->
     </div>
   </section>
 
