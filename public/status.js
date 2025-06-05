@@ -1,5 +1,5 @@
 // Arrays for platform statuses
-const allGood = ['Facebook', 'Instagram', 'TikTok', 'YouTube', 'Snapchat', 'Pinterest'];
+const allGood = ['Instagram', 'TikTok', 'YouTube', 'Snapchat', 'Pinterest'];
 const outage = ['Facebook'];
 const comingSoon = ['Threads', 'LinkedIn', 'Reddit', 'Twitter/X',];
 
