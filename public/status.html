@@ -242,32 +242,27 @@
       }
     }
   </style>
-  script>
-  let selectedPlatform = null;
+  <script>
+    let selectedPlatform = null;
 
-  function selectPlatform(element, platform) {
-  document.querySelectorAll('.status-box').forEach(box => {
-  box.classList.remove('selected');
-  });
-  element.classList.add('selected');
-  selectedPlatform = platform;
-  }
-
-  function reportProblem() {
-  if (!selectedPlatform) {
-  alert("Please select a platform before reporting a problem.");
-  return;
-  }
-  const subject = encodeURIComponent("Problem Report");
-  const body = encodeURIComponent(`I want to report a problem with the ${selectedPlatform} service.`);
-  window.location.href = `mailto:lifelink.ai@gmail.com?subject=${subject}&body=${body}`;
-  }
-  </script>
-  <style>
-    .status-box.selected {
-      border: 2px solid #fff !important;
+    function selectPlatform(element, platform) {
+      document.querySelectorAll('.status-box').forEach(box => {
+        box.style.border = 'none';
+      });
+      element.style.border = '2px solid #fff';
+      selectedPlatform = platform;
     }
-  </style>
+
+    function reportProblem() {
+      if (!selectedPlatform) {
+        alert("Please select a platform before reporting a problem.");
+        return;
+      }
+      const subject = encodeURIComponent("Problem Report");
+      const body = encodeURIComponent(`I want to report a problem with the ${selectedPlatform} service.`);
+      window.location.href = `mailto:lifelink.ai@gmail.com?subject=${subject}&body=${body}`;
+    }
+  </script>
 
 </head>
 
