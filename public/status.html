@@ -125,6 +125,12 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       width: 100%;
       cursor: pointer;
+      transition: border 0.2s, background-color 0.2s;
+    }
+
+    .status-box.selected {
+      border: 2px solid #fff;
+      background-color: #2a2a2e;
     }
 
     .indicator {
@@ -247,9 +253,9 @@
 
     function selectPlatform(element, platform) {
       document.querySelectorAll('.status-box').forEach(box => {
-        box.style.border = 'none';
+        box.classList.remove('selected');
       });
-      element.style.border = '2px solid #fff';
+      element.classList.add('selected');
       selectedPlatform = platform;
     }
 
@@ -263,7 +269,6 @@
       window.location.href = `mailto:lifelink.ai@gmail.com?subject=${subject}&body=${body}`;
     }
   </script>
-
 </head>
 
 <body>
@@ -291,7 +296,12 @@
     <button class="report-button" onclick="reportProblem()">Report a Problem</button>
 
     <div class="status" id="status-container">
-      <!-- Boxes injected by script with: onclick="selectPlatform(this, 'PlatformName')" -->
+      <!-- Add boxes like below or inject via script -->
+      <!-- Example: -->
+      <!-- <div class="status-box" onclick="selectPlatform(this, 'Instagram')">
+        <div class="indicator green"></div>
+        <div class="status-text"><i class="fab fa-instagram"></i> Instagram</div>
+      </div> -->
     </div>
   </section>
 
