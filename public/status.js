@@ -23,6 +23,9 @@ const iconMap = {
 function createStatusBox(platform, status) {
     const box = document.createElement('div');
     box.className = 'status-box';
+    box.onclick = function () {
+        selectPlatform(box, platform);
+    };
 
     const indicator = document.createElement('div');
     indicator.className = `indicator ${status}`;
@@ -42,6 +45,7 @@ function createStatusBox(platform, status) {
     box.appendChild(text);
     return box;
 }
+
 
 // Render all status boxes
 function renderStatus() {
