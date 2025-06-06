@@ -1,7 +1,7 @@
 // Arrays for platform statuses
-const allGood = ['Instagram', 'TikTok', 'YouTube', 'Snapchat', 'Pinterest'];
-const outage = ['Facebook'];
-const comingSoon = ['Threads', 'LinkedIn', 'Reddit', 'Twitter/X', 'Telegram', 'WeChat'];
+const allGood = ['Facebook', 'Instagram', 'TikTok', 'YouTube', 'Snapchat', 'Reddit', 'Pinterest'];
+const outage = ['Telegram', 'Twitter/X'];
+const comingSoon = ['Threads', 'LinkedIn', 'WeChat'];
 
 // Mapping platform names to icon classes
 const iconMap = {
