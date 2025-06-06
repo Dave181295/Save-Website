@@ -271,10 +271,8 @@
 
     function reportProblem() {
       if (!selectedPlatform) {
-        // ✅ Delay alert to avoid freezing WKWebView
-        setTimeout(() => {
-          alert("Please select a platform before reporting a problem.");
-        }, 0);
+        // ✅ Tell Swift to show alert
+        window.webkit.messageHandlers.alertHandler.postMessage("Please select a platform before reporting a problem.");
         return;
       }
 
@@ -282,6 +280,7 @@
       const body = encodeURIComponent(`I want to report a problem with the ${selectedPlatform} service.`);
       window.location.href = `mailto:lifelink.ai@gmail.com?subject=${subject}&body=${body}`;
     }
+
   </script>
 
 </head>
