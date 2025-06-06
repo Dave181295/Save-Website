@@ -267,16 +267,19 @@
       });
       element.classList.add('selected');
       selectedPlatform = platform;
+      // ✅ clear any previous message
+      document.getElementById('notice-text').textContent = "";
     }
 
     function reportProblem() {
       if (!selectedPlatform) {
-        // ✅ Tell iOS Swift code to show the alert
-        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.alertHandler) {
-          window.webkit.messageHandlers.alertHandler.postMessage("Please select a platform before reporting a problem.");
-        }
+        // ✅ Show message instead of alert
+        document.getElementById('notice-text').textContent = "Select a platform first.";
         return;
       }
+
+      // clear message
+      document.getElementById('notice-text').textContent = "";
 
       const subject = encodeURIComponent("Problem Report");
       const body = encodeURIComponent(`I want to report a problem with the ${selectedPlatform} service.`);
@@ -309,6 +312,7 @@
     </div>
 
     <button class="report-button" onclick="reportProblem()">Report a Problem</button>
+    <p id="notice-text" style="color: #e67e22; font-size: 0.9rem; margin-top: -1rem; min-height: 1.5rem;"></p>
 
     <div class="status" id="status-container">
       <!-- Add boxes like below or inject via script -->
