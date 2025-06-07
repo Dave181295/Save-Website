@@ -56,10 +56,7 @@
       left: -75%;
       width: 50%;
       height: 100%;
-      background: linear-gradient(120deg,
-          rgba(255, 255, 255, 0.1) 0%,
-          rgba(255, 255, 255, 0.4) 50%,
-          rgba(255, 255, 255, 0.1) 100%);
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%);
       transform: skewX(-20deg);
       animation: shine 2.2s infinite linear;
       pointer-events: none;
@@ -185,36 +182,6 @@
       max-width: 200px;
     }
 
-    .tooltip-container {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-    }
-
-    .tooltip-container .tooltip-text {
-      visibility: hidden;
-      background-color: #333;
-      color: #fff;
-      font-size: 0.75rem;
-      text-align: left;
-      padding: 6px 8px;
-      border-radius: 6px;
-      position: absolute;
-      bottom: 120%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      white-space: nowrap;
-      z-index: 100;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-    }
-
-    .tooltip-container:hover .tooltip-text {
-      visibility: visible;
-      opacity: 1;
-    }
-
     .status-section {
       padding: 2rem 1rem 1rem;
       text-align: center;
@@ -329,6 +296,54 @@
       font-size: 1.2rem;
     }
 
+    .status-text i.fa-facebook {
+      color: #1877f2;
+    }
+
+    .status-text i.fa-instagram {
+      color: #e4405f;
+    }
+
+    .status-text i.fa-tiktok {
+      color: #000000;
+    }
+
+    .status-text i.fa-youtube {
+      color: #ff0000;
+    }
+
+    .status-text i.fa-snapchat {
+      color: #fffc00;
+    }
+
+    .status-text i.fa-reddit {
+      color: #ff4500;
+    }
+
+    .status-text i.fa-pinterest {
+      color: #bd081c;
+    }
+
+    .status-text i.fa-telegram {
+      color: #0088cc;
+    }
+
+    .status-text i.fa-twitter {
+      color: #1da1f2;
+    }
+
+    .status-text i.fa-linkedin {
+      color: #0077b5;
+    }
+
+    .status-text i.fa-weixin {
+      color: #7bb32e;
+    }
+
+    .status-text i.fa-threads {
+      color: #000000;
+    }
+
     footer {
       display: flex;
       flex-direction: column;
@@ -370,16 +385,20 @@
       }
 
       .analytics-card {
-        max-width: 160px;
-        padding: 0.6rem 1rem;
+        width: 90%;
+        max-width: 400px;
+      }
+
+      .analytics-card {
+        font-size: 0.95rem;
       }
 
       .metric .value {
-        font-size: 1rem;
+        font-size: 1.3rem;
       }
 
       .metric .label {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
       }
     }
 
@@ -394,7 +413,6 @@
 </head>
 
 <body>
-
   <div class="topbar">
     <a href="https://apps.apple.com/app/save-and-organize/id6741809998" class="download-btn">
       <span class="btn-text">Download App</span>
@@ -431,9 +449,7 @@
 
   <section class="analytics-block">
     <div class="analytics-card">
-      <div class="live-indicator">
-        <span class="dot"></span> Live
-      </div>
+      <div class="live-indicator"><span class="dot"></span> Live</div>
       <div class="metric">
         <div class="label">Users (last 30 min)</div>
         <div class="value" id="active-30">--</div>
@@ -456,7 +472,6 @@
 
   <script src="status.js"></script>
   <script src="analytics.js"></script>
-
 </body>
 
 </html>
