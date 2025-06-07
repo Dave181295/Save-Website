@@ -12,18 +12,6 @@
       box-sizing: border-box;
     }
 
-    header {
-      padding: 2rem 1rem 1rem;
-      text-align: center;
-    }
-
-    .center-logo {
-      max-width: 100%;
-      height: auto;
-      max-height: 80px;
-      margin-bottom: 0.75rem;
-    }
-
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -92,11 +80,139 @@
       text-align: center;
     }
 
+    header img {
+      max-width: 100%;
+      height: auto;
+      max-height: 80px;
+      margin-bottom: 0.75rem;
+    }
+
     header p {
       margin: 0;
       font-size: 1.4rem;
       font-weight: 700;
       color: #fff;
+    }
+
+    .analytics-block {
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+    }
+
+    .analytics-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ccc;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .live-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #6c5ce7;
+      margin-bottom: 1rem;
+    }
+
+    .live-indicator .dot {
+      width: 8px;
+      height: 8px;
+      background-color: #6c5ce7;
+      border-radius: 50%;
+      margin-right: 6px;
+      animation: pulseDot 1.5s infinite;
+    }
+
+    @keyframes pulseDot {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+      }
+    }
+
+    .metric {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .metric .label {
+      font-size: 0.75rem;
+      color: #888;
+    }
+
+    .metric .value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #eee;
+      transition: color 0.3s;
+    }
+
+    .value.blink {
+      animation: subtleBlink 0.3s ease-in-out 3;
+      color: #6c5ce7;
+    }
+
+    @keyframes subtleBlink {
+
+      0%,
+      100% {
+        color: #eee;
+      }
+
+      50% {
+        color: #6c5ce7;
+      }
+    }
+
+    .analytics-card {
+      background-color: #1a1a1d;
+      padding: 0.75rem 1.25rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      max-width: 200px;
+    }
+
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .tooltip-container .tooltip-text {
+      visibility: hidden;
+      background-color: #333;
+      color: #fff;
+      font-size: 0.75rem;
+      text-align: left;
+      padding: 6px 8px;
+      border-radius: 6px;
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      white-space: nowrap;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .tooltip-container:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
     }
 
     .status-section {
@@ -211,55 +327,6 @@
 
     .status-text i {
       font-size: 1.2rem;
-      color: inherit;
-    }
-
-    .fab.fa-instagram {
-      color: #E4405F;
-    }
-
-    .fab.fa-youtube {
-      color: #FF0000;
-    }
-
-    .fab.fa-tiktok {
-      color: #69C9D0;
-    }
-
-    .fab.fa-facebook {
-      color: #3b5998;
-    }
-
-    .fab.fa-reddit {
-      color: #FF5700;
-    }
-
-    .fab.fa-threads {
-      color: #000000;
-    }
-
-    .fab.fa-twitter {
-      color: #1DA1F2;
-    }
-
-    .fab.fa-linkedin {
-      color: #0077b5;
-    }
-
-    .fab.fa-telegram {
-      color: #0088cc;
-    }
-
-    .fab.fa-weixin {
-      color: #7bb32e;
-    }
-
-    .fab.fa-pinterest {
-      color: #E60023;
-    }
-
-    .fab.fa-snapchat {
-      color: #FFFC00;
     }
 
     footer {
@@ -290,25 +357,37 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 600px) {
-      .status {
-        grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 768px) {
+      .topbar {
+        position: static;
       }
 
-      header p {
-        font-size: 1.1rem;
+      .analytics-block {
+        position: static;
+        margin: 2rem auto;
+        display: flex;
+        justify-content: center;
       }
 
-      .status-section h2 {
-        font-size: 1.1rem;
+      .analytics-card {
+        max-width: 160px;
+        padding: 0.6rem 1rem;
       }
 
-      .legend-item {
-        font-size: 0.8rem;
-      }
-
-      .status-text i {
+      .metric .value {
         font-size: 1rem;
+      }
+
+      .metric .label {
+        font-size: 0.7rem;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .analytics-block {
+        position: absolute;
+        top: 100px;
+        right: 2rem;
       }
     }
   </style>
@@ -316,7 +395,6 @@
 
 <body>
 
-  <!-- Sticky Topbar -->
   <div class="topbar">
     <a href="https://apps.apple.com/app/save-and-organize/id6741809998" class="download-btn">
       <span class="btn-text">Download App</span>
@@ -324,7 +402,6 @@
     </a>
   </div>
 
-  <!-- Centered Logo -->
   <header>
     <img src="logo-white.png" alt="Save Logo" class="center-logo" />
     <p>Save, Organize, Watch</p>
@@ -350,7 +427,22 @@
     <p id="notice-text" style="color: #e67e22; font-size: 0.9rem; margin-top: -1rem; min-height: 1.5rem;"></p>
 
     <div class="status" id="status-container"></div>
+  </section>
 
+  <section class="analytics-block">
+    <div class="analytics-card">
+      <div class="live-indicator">
+        <span class="dot"></span> Live
+      </div>
+      <div class="metric">
+        <div class="label">Users (last 30 min)</div>
+        <div class="value" id="active-30">--</div>
+      </div>
+      <div class="metric">
+        <div class="label">Users (last 5 min)</div>
+        <div class="value" id="active-5">--</div>
+      </div>
+    </div>
   </section>
 
   <footer>
@@ -362,29 +454,8 @@
     <p>&copy; 2025 LifeLink-AI, Inc. All rights reserved.</p>
   </footer>
 
-  <script>
-    let selectedPlatform = null;
-
-    function selectPlatform(element, platform) {
-      document.querySelectorAll('.status-box').forEach(box => {
-        box.classList.remove('selected');
-      });
-      element.classList.add('selected');
-      selectedPlatform = platform;
-      document.getElementById('notice-text').textContent = "";
-    }
-
-    function reportProblem() {
-      if (!selectedPlatform) {
-        document.getElementById('notice-text').textContent = "Select a platform first.";
-        return;
-      }
-      const subject = encodeURIComponent("Problem Report");
-      const body = encodeURIComponent(`I want to report a problem with the ${selectedPlatform} service.`);
-      window.location.href = `mailto:lifelink.ai@gmail.com?subject=${subject}&body=${body}`;
-    }
-  </script>
   <script src="status.js"></script>
+  <script src="analytics.js"></script>
 
 </body>
 
