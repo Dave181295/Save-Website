@@ -373,36 +373,171 @@
     }
 
     @media (max-width: 768px) {
-      .topbar {
-        position: static;
+
+      .info-btn {
+        margin-left: 0.3rem;
+        background: none;
+        border: none;
+        color: #888;
+        font-size: 0.8rem;
+        cursor: help;
+        position: relative;
+        padding: 0;
       }
 
+      .info-btn::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        font-size: 0.65rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        z-index: 10;
+      }
+
+      .info-btn:hover::after {
+        opacity: 1;
+      }
+
+      /* base font size */
+      html {
+        font-size: 16px;
+      }
+
+      /* Topbar */
+      .topbar {
+        position: static;
+        padding: 1rem;
+        justify-content: center;
+      }
+
+      .download-btn {
+        width: 100%;
+        max-width: 280px;
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+        border-radius: 14px;
+      }
+
+      /* Header */
+      header {
+        padding: 2rem 1rem 1.5rem;
+      }
+
+      header p {
+        font-size: 1.6rem;
+        letter-spacing: 0.5px;
+      }
+
+      /* Status section */
+      .status-section {
+        padding: 1.5rem 1rem 1rem;
+      }
+
+      .legend {
+        justify-content: space-around;
+        margin-bottom: 1rem;
+      }
+
+      .report-button {
+        width: 100%;
+        max-width: 300px;
+        padding: 0.85rem 1.25rem;
+        border-radius: 8px;
+        font-size: 1rem;
+      }
+
+      #notice-text {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .status {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 0.5rem 1rem 1.5rem;
+      }
+
+      .status-box {
+        padding: 1rem;
+        border-radius: 12px;
+        background-color: #1c1c1f;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .status-box:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+      }
+
+      /* Analytics: two-column grid with refined text */
       .analytics-block {
         position: static;
-        margin: 2rem auto;
+        margin: 1.5rem auto;
         display: flex;
         justify-content: center;
       }
 
       .analytics-card {
         width: 90%;
-        max-width: 400px;
+        max-width: 300px;
+        padding: 0.5rem;
+        border-radius: 12px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
       }
 
-      .analytics-card {
-        font-size: 0.95rem;
+      .analytics-card .live-indicator {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
       }
 
-      .metric .value {
-        font-size: 1.3rem;
+      .analytics-card .metric {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 0;
       }
 
-      .metric .label {
-        font-size: 0.8rem;
+      .analytics-card .metric:first-of-type {
+        border-right: 1px solid #2c2c2f;
       }
+
+      .analytics-card .label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #ccc;
+        margin-bottom: 0.25rem;
+      }
+
+      .analytics-card .value {
+        font-variant-numeric: tabular-nums;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #fff;
+      }
+
     }
 
     @media (min-width: 769px) {
+      .info-btn {
+        display: none !important;
+      }
+
       .analytics-block {
         position: absolute;
         top: 100px;
@@ -449,7 +584,14 @@
 
   <section class="analytics-block">
     <div class="analytics-card">
-      <div class="live-indicator"><span class="dot"></span> Live</div>
+      <div class="live-indicator">
+        <span class="dot"></span>
+        Live
+        <button class="info-btn" data-tooltip="Real time data by Google Firebase Analytics">
+          <i class="fa fa-info-circle"></i>
+        </button>
+      </div>
+
       <div class="metric">
         <div class="label">Users (last 30 min)</div>
         <div class="value" id="active-30">--</div>

@@ -10,11 +10,10 @@ function generateLiveAnalytics() {
 
   let dropPercent;
   if (active30 > 7000) {
-    dropPercent = Math.random() * 0.1 + 0.3; // 30–40% drop
+    dropPercent = Math.random() * 0.1 + 0.3;  // 30–40% drop
   } else {
-    dropPercent = Math.random() * 0.15 + 0.1; // 10–25% drop
+    dropPercent = Math.random() * 0.1 + 0.2;  // 20–30% drop
   }
-
   const active5 = Math.floor(active30 * (1 - dropPercent));
 
   blinkValue(document.getElementById("active-30"), active30);
