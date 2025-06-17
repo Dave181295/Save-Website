@@ -1,1 +1,89 @@
-const _0x543857 = _0x13c9; (function (_0x186af7, _0x217fe9) { const _0x34643a = _0x13c9, _0x42e4af = _0x186af7(); while (!![]) { try { const _0x3e03be = -parseInt(_0x34643a(0x83)) / 0x1 + parseInt(_0x34643a(0x9e)) / 0x2 + -parseInt(_0x34643a(0x7d)) / 0x3 * (parseInt(_0x34643a(0x7a)) / 0x4) + parseInt(_0x34643a(0x7e)) / 0x5 + parseInt(_0x34643a(0x88)) / 0x6 * (parseInt(_0x34643a(0x91)) / 0x7) + parseInt(_0x34643a(0x78)) / 0x8 * (-parseInt(_0x34643a(0x95)) / 0x9) + parseInt(_0x34643a(0x75)) / 0xa; if (_0x3e03be === _0x217fe9) break; else _0x42e4af['push'](_0x42e4af['shift']()); } catch (_0x31abc0) { _0x42e4af['push'](_0x42e4af['shift']()); } } }(_0x6e36, 0x2cdae)); const allGood = [_0x543857(0x9c), 'Instagram', _0x543857(0x7f), _0x543857(0x73), 'Snapchat', 'Reddit', 'Pinterest'], outage = [_0x543857(0x9d), 'Twitter/X'], comingSoon = [_0x543857(0x7b), _0x543857(0x8c), _0x543857(0x79)], iconMap = { 'Instagram': _0x543857(0x9a), 'Facebook': 'fab\x20fa-facebook', 'Reddit': _0x543857(0x94), 'TikTok': 'fab\x20fa-tiktok', 'Threads': _0x543857(0x74), 'LinkedIn': _0x543857(0x96), 'Twitter/X': _0x543857(0x89), 'YouTube': 'fab\x20fa-youtube', 'Pinterest': _0x543857(0xa1), 'Snapchat': _0x543857(0x76), 'Telegram': 'fab\x20fa-telegram', 'WeChat': _0x543857(0x72) }; let selectedPlatform = null; function _0x6e36() { const _0x1df1f5 = ['Facebook', 'Telegram', '330440FGYpdB', 'Select\x20a\x20platform\x20first.', 'className', 'fab\x20fa-pinterest', '\x20service.', 'mailto:lifelink.ai@gmail.com?subject=', 'notice-text', 'fab\x20fa-weixin', 'YouTube', 'fab\x20fa-threads', '2303660FNmqSi', 'fab\x20fa-snapchat', 'remove', '1448xcORqg', 'WeChat', '1732YMBlgf', 'Threads', 'add', '1119aGPIUG', '1305165qkcVQz', 'TikTok', 'div', 'createElement', '&body=', '79018lYhOwy', 'status-box', 'red', 'status-container', 'querySelectorAll', '505218QggefT', 'fab\x20fa-twitter', 'DOMContentLoaded', 'classList', 'LinkedIn', 'Problem\x20Report', 'indicator\x20', 'appendChild', 'location', '7xUYxgh', 'addEventListener', 'forEach', 'fab\x20fa-reddit', '15741imTJCE', 'fab\x20fa-linkedin', 'textContent', 'selected', 'onclick', 'fab\x20fa-instagram', 'getElementById']; _0x6e36 = function () { return _0x1df1f5; }; return _0x6e36(); } function selectPlatform(_0x42fae4, _0x2b944e) { const _0x201dac = _0x543857; document[_0x201dac(0x87)]('.status-box')[_0x201dac(0x93)](_0xdf2163 => { const _0x5d03af = _0x201dac; _0xdf2163['classList'][_0x5d03af(0x77)](_0x5d03af(0x98)); }), _0x42fae4[_0x201dac(0x8b)][_0x201dac(0x7c)](_0x201dac(0x98)), selectedPlatform = _0x2b944e, document[_0x201dac(0x9b)](_0x201dac(0x71))[_0x201dac(0x97)] = ''; } function reportProblem() { const _0x2b5d32 = _0x543857; if (!selectedPlatform) { document[_0x2b5d32(0x9b)](_0x2b5d32(0x71))[_0x2b5d32(0x97)] = _0x2b5d32(0x9f); return; } const _0x1f3c9d = encodeURIComponent(_0x2b5d32(0x8d)), _0x144357 = encodeURIComponent('I\x20want\x20to\x20report\x20a\x20problem\x20with\x20the\x20' + selectedPlatform + _0x2b5d32(0xa2)); window[_0x2b5d32(0x90)]['href'] = _0x2b5d32(0xa3) + _0x1f3c9d + _0x2b5d32(0x82) + _0x144357; } function createStatusBox(_0x183cd5, _0x4933d4) { const _0x519b5a = _0x543857, _0x23084e = document[_0x519b5a(0x81)](_0x519b5a(0x80)); _0x23084e['className'] = _0x519b5a(0x84), _0x23084e[_0x519b5a(0x99)] = function () { selectPlatform(_0x23084e, _0x183cd5); }; const _0x350147 = document['createElement'](_0x519b5a(0x80)); _0x350147[_0x519b5a(0xa0)] = _0x519b5a(0x8e) + _0x4933d4, _0x23084e[_0x519b5a(0x8f)](_0x350147); const _0x4fdaa0 = document[_0x519b5a(0x81)](_0x519b5a(0x80)); _0x4fdaa0['className'] = 'status-text'; const _0x4a22aa = document[_0x519b5a(0x81)]('i'); _0x4a22aa[_0x519b5a(0xa0)] = iconMap[_0x183cd5], _0x4fdaa0[_0x519b5a(0x8f)](_0x4a22aa); const _0x27f160 = document[_0x519b5a(0x81)]('span'); return _0x27f160['textContent'] = _0x183cd5, _0x4fdaa0['appendChild'](_0x27f160), _0x23084e['appendChild'](_0x4fdaa0), _0x23084e; } function _0x13c9(_0x3caa4d, _0x4b9a7b) { const _0x6e36f3 = _0x6e36(); return _0x13c9 = function (_0x13c923, _0x2f9de0) { _0x13c923 = _0x13c923 - 0x71; let _0x3bf9ed = _0x6e36f3[_0x13c923]; return _0x3bf9ed; }, _0x13c9(_0x3caa4d, _0x4b9a7b); } function renderStatus() { const _0xcef84b = _0x543857, _0x274dfe = document[_0xcef84b(0x9b)](_0xcef84b(0x86)); allGood[_0xcef84b(0x93)](_0xdefeca => { _0x274dfe['appendChild'](createStatusBox(_0xdefeca, 'green')); }), outage['forEach'](_0x2e6ea7 => { const _0x5649b6 = _0xcef84b; _0x274dfe[_0x5649b6(0x8f)](createStatusBox(_0x2e6ea7, _0x5649b6(0x85))); }), comingSoon[_0xcef84b(0x93)](_0xc5740f => { const _0x57e3ba = _0xcef84b; _0x274dfe[_0x57e3ba(0x8f)](createStatusBox(_0xc5740f, 'purple')); }); } document[_0x543857(0x92)](_0x543857(0x8a), renderStatus);
+// Arrays for platform statuses
+const allGood = ['Facebook', 'Instagram', 'TikTok', 'YouTube', 'Snapchat', 'Reddit', 'Pinterest', 'Telegram'];
+const outage = [];
+const comingSoon = ['Threads', 'LinkedIn', 'WeChat', 'Twitter/X'];
+
+// Mapping platform names to icon classes
+const iconMap = {
+    'Instagram': 'fab fa-instagram',
+    'Facebook': 'fab fa-facebook',
+    'Reddit': 'fab fa-reddit',
+    'TikTok': 'fab fa-tiktok',
+    'Threads': 'fab fa-threads',
+    'LinkedIn': 'fab fa-linkedin',
+    'Twitter/X': 'fab fa-twitter',
+    'YouTube': 'fab fa-youtube',
+    'Pinterest': 'fab fa-pinterest',
+    'Snapchat': 'fab fa-snapchat',
+    'Telegram': 'fab fa-telegram',
+    'WeChat': 'fab fa-weixin'
+
+};
+
+let selectedPlatform = null;
+
+function selectPlatform(element, platform) {
+    document.querySelectorAll('.status-box').forEach(box => {
+        box.classList.remove('selected');
+    });
+    element.classList.add('selected');
+    selectedPlatform = platform;
+    document.getElementById('notice-text').textContent = "";
+}
+
+function reportProblem() {
+    if (!selectedPlatform) {
+        document.getElementById('notice-text').textContent = "Select a platform first.";
+        return;
+    }
+    const subject = encodeURIComponent("Problem Report");
+    const body = encodeURIComponent(`I want to report a problem with the ${selectedPlatform} service.`);
+    window.location.href = `mailto:lifelink.ai@gmail.com?subject=${subject}&body=${body}`;
+}
+
+// Function to create a status box
+function createStatusBox(platform, status) {
+    const box = document.createElement('div');
+    box.className = 'status-box';
+    box.onclick = function () {
+        selectPlatform(box, platform);
+    };
+
+    const indicator = document.createElement('div');
+    indicator.className = `indicator ${status}`;
+    box.appendChild(indicator);
+
+    const text = document.createElement('div');
+    text.className = 'status-text';
+
+    const icon = document.createElement('i');
+    icon.className = iconMap[platform];
+    text.appendChild(icon);
+
+    const span = document.createElement('span');
+    span.textContent = platform;
+    text.appendChild(span);
+
+    box.appendChild(text);
+    return box;
+}
+
+// Render all status boxes
+function renderStatus() {
+    const container = document.getElementById('status-container');
+
+    allGood.forEach(platform => {
+        container.appendChild(createStatusBox(platform, 'green'));
+    });
+
+    outage.forEach(platform => {
+        container.appendChild(createStatusBox(platform, 'red'));
+    });
+
+    comingSoon.forEach(platform => {
+        container.appendChild(createStatusBox(platform, 'purple'));
+    });
+}
+
+// Initialize on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', renderStatus);

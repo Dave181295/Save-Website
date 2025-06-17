@@ -394,6 +394,10 @@
         text-align: center;
       }
     }
+
+    .status-box.selected {
+      border: 2px solid #e67e22;
+    }
   </style>
 </head>
 
@@ -451,7 +455,7 @@
     <button class="report-button" onclick="reportProblem()">Report a Problem</button>
     <p id="notice-text" style="color: #e67e22; font-size: 0.9rem; min-height: 1.5rem;"></p>
 
-    <div class="status" id="status-container">
+    <div class="status" id="status-container"></div>
 
   </section>
 
