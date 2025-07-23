@@ -8,8 +8,96 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    .popup-content p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+      color: black;
+      /* default */
+      display: inline-block;
+    }
+
+    .popup-content p .save,
+    .popup-content p .hub {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: 1;
+    }
+
+    .popup-content p .save {
+      color: white;
+    }
+
+    .popup-content p .hub {
+      color: #FF9900;
+    }
+
+
     * {
       box-sizing: border-box;
+    }
+
+    .mobile-popup {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-popup {
+        display: flex;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .popup-content {
+        background: #1a1a1d;
+        padding: 2.5rem 2rem;
+        border-radius: 12px;
+        text-align: center;
+        width: 90%;
+        max-width: 320px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .popup-content p {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .download-btn {
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-radius: 12px;
+        text-align: center;
+        display: block;
+      }
+
+      .close-popup {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        background: none;
+        border: none;
+        color: #aaa;
+        font-size: 1.8rem;
+        cursor: pointer;
+        line-height: 1;
+      }
+
     }
 
     body {
@@ -402,6 +490,15 @@
 </head>
 
 <body>
+  <!-- Mobile Download Popup -->
+  <div class="mobile-popup" id="downloadPopup">
+    <div class="popup-content">
+      <p><span class="save">Save</span><span class="hub">Hub</span></p>
+      <a href="https://apps.apple.com/app/savehub/id6741809998" class="download-btn">
+        Download Now
+      </a>
+    </div>
+  </div>
 
   <!-- Topbar visible only on desktop -->
   <div class="topbar desktop-only">
@@ -489,6 +586,26 @@
 
   <script src="status.js"></script>
   <script src="analytics.js"></script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const popup = document.getElementById('downloadPopup');
+      if (!popup) return;
+
+      // hide popup first
+      popup.style.display = 'none';
+
+      const url = new URL(window.location.href);
+      const showPopup = window.location.pathname === '/try';
+
+      if (showPopup && window.innerWidth <= 768) {
+        popup.style.display = 'flex';
+      }
+    });
+
+  </script>
+
+
 </body>
 
 </html>
