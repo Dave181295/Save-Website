@@ -331,6 +331,22 @@
       background-color: #9b59b6;
     }
 
+    .report-button {
+      margin: 1.5rem auto 2rem;
+      padding: 0.75rem 1.25rem;
+      background-color: #e67e22;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .report-button:hover {
+      background-color: #d35400;
+    }
+
     .status {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -532,6 +548,9 @@
         <div class="legend-circle purple"></div> Coming Soon
       </div>
     </div>
+
+    <button class="report-button" onclick="reportProblem()">Report a Problem</button>
+    <p id="notice-text" style="color: #e67e22; font-size: 0.9rem; min-height: 1.5rem;"></p>
 
     <div class="status" id="status-container"></div>
 
