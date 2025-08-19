@@ -1,7 +1,7 @@
 // Arrays for platform statuses
-const allGood = ['Facebook', 'Instagram', 'TikTok', 'YouTube', 'Pinterest'];
+const allGood = ['Instagram', 'Facebook', 'TikTok', 'YouTube', 'Pinterest'];
 const outage = ['Snapchat', 'Reddit', 'Telegram'];
-const comingSoon = ['Threads', 'LinkedIn', 'WeChat', 'Twitter/X'];
+const comingSoon = ['Threads', 'Twitter/X', 'Mastodon', 'BlueSky'];
 
 // Mapping platform names to icon classes
 const iconMap = {
@@ -10,14 +10,13 @@ const iconMap = {
     'Reddit': 'fab fa-reddit',
     'TikTok': 'fab fa-tiktok',
     'Threads': 'fab fa-threads',
-    'LinkedIn': 'fab fa-linkedin',
     'Twitter/X': 'fab fa-twitter',
     'YouTube': 'fab fa-youtube',
     'Pinterest': 'fab fa-pinterest',
     'Snapchat': 'fab fa-snapchat',
     'Telegram': 'fab fa-telegram',
-    'WeChat': 'fab fa-weixin'
-
+    'Mastodon': 'fab fa-mastodon',   // ✅
+    'BlueSky': 'fa-solid fa-cloud'   // ✅ no official brand icon in FontAwesome, pick a placeholder
 };
 
 let selectedPlatform = null;
