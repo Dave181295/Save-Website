@@ -14,7 +14,6 @@
       font-weight: 700;
       margin: 0;
       color: black;
-      /* default */
       display: inline-block;
     }
 
@@ -33,7 +32,6 @@
     .popup-content p .hub {
       color: #FF9900;
     }
-
 
     * {
       box-sizing: border-box;
@@ -97,7 +95,6 @@
         cursor: pointer;
         line-height: 1;
       }
-
     }
 
     body {
@@ -171,13 +168,6 @@
     header img {
       max-height: 80px;
       margin-bottom: 0.75rem;
-    }
-
-    header p {
-      margin: 0;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #fff;
     }
 
     .analytics-block {
@@ -452,13 +442,8 @@
       text-decoration: underline;
     }
 
-    /* Desktop / Mobile visibility toggles */
     .desktop-only {
       display: block;
-    }
-
-    .mobile-only {
-      display: none;
     }
 
     @media (max-width: 768px) {
@@ -493,8 +478,9 @@
   <!-- Mobile Download Popup -->
   <div class="mobile-popup" id="downloadPopup">
     <div class="popup-content">
+      <button class="close-popup" id="closePopup">&times;</button>
       <p><span class="save">Save</span><span class="hub">Hub</span></p>
-      <a href="https://apps.apple.com/app/savehub/id6741809998" class="download-btn">
+      <a href="https://apps.apple.com/app/savehub-download-media/id6741809998" class="download-btn">
         Access Now
       </a>
     </div>
@@ -502,7 +488,7 @@
 
   <!-- Topbar visible only on desktop -->
   <div class="topbar desktop-only">
-    <a href="#" class="download-btn">
+    <a href="https://apps.apple.com/app/savehub-download-media/id6741809998" class="download-btn">
       <span class="btn-text">Download App</span>
       <span class="shine"></span>
     </a>
@@ -510,7 +496,6 @@
 
   <header>
     <img src="savehub.png" alt="Save Logo" class="center-logo" />
-    <p>Save, Organize, Watch</p>
   </header>
 
   <!-- Desktop analytics -->
@@ -549,9 +534,7 @@
       </div>
     </div>
 
-
     <div class="status" id="status-container"></div>
-
   </section>
 
   <!-- Mobile analytics -->
@@ -584,25 +567,27 @@
 
   <script src="status.js"></script>
   <script src="analytics.js"></script>
-
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
       const popup = document.getElementById('downloadPopup');
-      if (!popup) return;
+      const closeBtn = document.getElementById('closePopup');
 
-      // hide popup first
-      popup.style.display = 'none';
+      const isMobile = window.innerWidth <= 768;
+      const isRoot = window.location.pathname === '/'; // only root shows popup
+      const isStatus = window.location.pathname === '/status'; // inside app
 
-      const url = new URL(window.location.href);
-      const showPopup = window.location.pathname === '/try';
-
-      if (showPopup && window.innerWidth <= 768) {
+      // show popup only on mobile root, never on /status
+      if (isMobile && isRoot) {
         popup.style.display = 'flex';
+      } else {
+        popup.style.display = 'none';
       }
+
+      closeBtn.addEventListener('click', () => {
+        popup.style.display = 'none';
+      });
     });
-
   </script>
-
 
 </body>
 
